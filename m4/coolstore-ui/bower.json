@@ -13,12 +13,11 @@
         "isotope": "2.2.2",
         "imagesloaded": "4.1.1",
         "angular-route": "1.5.10",
-        "keycloak": "1.9.8",
+        "keycloak": "1.9.8"
+    },
+    "dependencies": {
         "angular": "1.5.10",
         "jquery": "3.4.1",
         "bootstrap": "~3.3.7"
-    },
-    "resolutions": {
-        
     }
 }
