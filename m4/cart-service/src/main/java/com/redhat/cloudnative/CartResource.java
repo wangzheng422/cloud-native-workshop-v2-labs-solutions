@@ -96,20 +96,20 @@ public class CartResource {
 
     // TODO ADD for KAFKA
     private void sendOrder(Order order, String cartId) {
-        order.setTotal(shoppingCartService.getShoppingCart(cartId).getCartTotal() + "");
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>(ordersTopic, null, null, null, Json.encode(order), new RecordHeaders().add("content-type", "application/json".getBytes()));
-        producer.send(producerRecord);
-        log.info("Sent message: " + Json.encode(order));
+        // order.setTotal(shoppingCartService.getShoppingCart(cartId).getCartTotal() + "");
+        // ProducerRecord<String, String> producerRecord = new ProducerRecord<>(ordersTopic, null, null, null, Json.encode(order), new RecordHeaders().add("content-type", "application/json".getBytes()));
+        // producer.send(producerRecord);
+        // log.info("Sent message: " + Json.encode(order));
     }
 
     // TODO ADD for KAFKA
     public void init(@Observes StartupEvent ev) {
-        Properties props = new Properties();
+        // Properties props = new Properties();
 
-        props.put("bootstrap.servers", bootstrapServers);
-        props.put("value.serializer", ordersTopicValueSerializer);
-        props.put("key.serializer", ordersTopicKeySerializer);
-        producer = new KafkaProducer<String, String>(props);
+        // props.put("bootstrap.servers", bootstrapServers);
+        // props.put("value.serializer", ordersTopicValueSerializer);
+        // props.put("key.serializer", ordersTopicKeySerializer);
+        // producer = new KafkaProducer<String, String>(props);
     }
 
 
